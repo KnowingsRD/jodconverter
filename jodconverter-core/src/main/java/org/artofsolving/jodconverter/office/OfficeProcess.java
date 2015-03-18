@@ -96,6 +96,7 @@ class OfficeProcess {
         command.add(executable.getAbsolutePath());
         command.add("-help");
         command.add("-headless");
+        command.add("-invisible");
         command.add("-nocrashreport");
         command.add("-nofirststartwizard");
         command.add("-nolockcheck");
@@ -212,6 +213,7 @@ class OfficeProcess {
                     + OfficeUtils.toUrl(fakeBundlesDir));
         }
         command.add(COMMAND_ARG_PREFIX + "headless");
+        command.add(COMMAND_ARG_PREFIX + "invisible");
         command.add(COMMAND_ARG_PREFIX + "nocrashreport");
         command.add(COMMAND_ARG_PREFIX + "nodefault");
         command.add(COMMAND_ARG_PREFIX + "nofirststartwizard");
