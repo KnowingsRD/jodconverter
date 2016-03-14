@@ -38,7 +38,7 @@ import com.sun.star.util.XRefreshable;
 
 /**
  * 
- * Added Map<String, Object> params to control DocumentIndex update
+ * Added Map&lt;String, Object&gt; params to control DocumentIndex update
  * 
  * @author <a href="mailto:tdelprat@nuxeo.com">Tiry</a>
  * 
