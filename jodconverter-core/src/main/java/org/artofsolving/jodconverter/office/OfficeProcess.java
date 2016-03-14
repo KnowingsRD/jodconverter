@@ -20,9 +20,7 @@
 package org.artofsolving.jodconverter.office;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -94,14 +92,14 @@ class OfficeProcess {
 
         List<String> command = new ArrayList<String>();
         command.add(executable.getAbsolutePath());
-        command.add("-help");
-        command.add("-headless");
-        command.add("-invisible");
-        command.add("-nocrashreport");
-        command.add("-nofirststartwizard");
-        command.add("-nolockcheck");
-        command.add("-nologo");
-        command.add("-norestore");
+        command.add(COMMAND_ARG_PREFIX + "help");
+        command.add(COMMAND_ARG_PREFIX + "headless");
+        command.add(COMMAND_ARG_PREFIX + "invisible");
+        command.add(COMMAND_ARG_PREFIX + "nocrashreport");
+        command.add(COMMAND_ARG_PREFIX + "nofirststartwizard");
+        command.add(COMMAND_ARG_PREFIX + "nolockcheck");
+        command.add(COMMAND_ARG_PREFIX + "nologo");
+        command.add(COMMAND_ARG_PREFIX + "norestore");
         command.add("-env:UserInstallation="
                 + OfficeUtils.toUrl(instanceProfileDir));
         ProcessBuilder processBuilder = new ProcessBuilder(command);
@@ -220,6 +218,9 @@ class OfficeProcess {
         command.add(COMMAND_ARG_PREFIX + "nolockcheck");
         command.add(COMMAND_ARG_PREFIX + "nologo");
         command.add(COMMAND_ARG_PREFIX + "norestore");
+        
+        logger.fine(command.toArray(new String[command.size()]).toString());
+        
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.redirectErrorStream(true);
         lastCommand = command;
